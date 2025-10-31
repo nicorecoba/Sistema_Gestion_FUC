@@ -1,0 +1,58 @@
+﻿{
+  "info": {
+    "name": "FUC API (local)",
+    "_postman_id": "fuc-api-local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Healthcheck",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Crear usuario",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@fuc.test\",\n  \"name\": \"Usuario Test\",\n  \"role\": \"DELEGADO\"\n}"
+        },
+        "url": "{{base_url}}/users"
+      }
+    },
+    {
+      "name": "Listar usuarios",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/users"
+      }
+    },
+    {
+      "name": "Crear club",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Club Remeros Montevideo\"\n}"
+        },
+        "url": "{{base_url}}/clubs"
+      }
+    },
+    {
+      "name": "Listar clubs",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/clubs"
+      }
+    }
+  ]
+}
