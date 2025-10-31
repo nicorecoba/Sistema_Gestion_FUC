@@ -36,4 +36,7 @@ npm run dev
 =======
 
 probando
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
