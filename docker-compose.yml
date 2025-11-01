@@ -18,15 +18,21 @@ services:
       timeout: 3s
       retries: 10
 
-  adminer:
-    image: adminer:4
-    container_name: fuc_adminer
+  pgadmin:
+    image: dpage/pgadmin4:8
+    container_name: fuc_pgadmin
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-nicorecoba88@gmail.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin123}
     depends_on:
       postgres:
         condition: service_healthy
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
   pgdata: {}
+  pgadmin_data: {}
